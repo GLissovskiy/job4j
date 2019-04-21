@@ -25,4 +25,11 @@ public class MultiMaxTest {
         int result = check.max(1, 4, 8);
         assertThat(result, is(8));
     }
+
+    @Test
+    public void whenEqualsMax() {
+        MultiMax check = new MultiMax();
+        int result = check.max(2, 2, 2);
+        assertThat(result, is(2));
+    }
 }
