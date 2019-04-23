@@ -30,10 +30,18 @@ public class CheckTest {
     }
 
     @Test
-    public void whenDataNotMonoByFalseFalseFalseFalse() {
+    public void whenDataNotMonoByFalseFalseFalseTrue() {
         Check check = new Check();
         boolean[] input = new boolean[] {false, false, false, true};
         boolean result = check.mono(input);
         assertThat(result, is(false));
+    }
+
+    @Test
+    public void whenDataMonoByFalseFalse() {
+        Check check = new Check();
+        boolean[] input = new boolean[] {false, false};
+        boolean result = check.mono(input);
+        assertThat(result, is(true));
     }
 }
