@@ -52,4 +52,5 @@ public class MatrixCheckTest {
         boolean result = check.mono(input);
         assertThat(result, is(false));
     }
+
 }
