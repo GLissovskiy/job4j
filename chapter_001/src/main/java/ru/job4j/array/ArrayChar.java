@@ -19,10 +19,11 @@ public class ArrayChar {
         boolean result = false;
         char[] value = prefix.toCharArray();
         for (int i = 0; i < value.length; i++) {
-            if (value[i] == data[i]) {
-                result = true;
+            if (value[i] != data[i]) {
+                result = false;
+                break;
             } else {
-                return false;
+                result = true;
             }
         }
         return result;
