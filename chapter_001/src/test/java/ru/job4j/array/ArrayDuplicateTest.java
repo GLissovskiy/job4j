@@ -78,4 +78,13 @@ public class ArrayDuplicateTest {
         String[] result = arrayDuplicate.remove(array);
         assertThat(result, arrayContainingInAnyOrder(except));
     }
+
+    @Test
+    public void whenRemoveDuplicatesThenArrayWithoutDuplicate9() {
+        String[] array = {"Привет", "Привет", "Привет", "Привет", "Привет", "Привет"};
+        String[] except = {"Привет"};
+        ArrayDuplicate arrayDuplicate = new ArrayDuplicate();
+        String[] result = arrayDuplicate.remove(array);
+        assertThat(result, arrayContainingInAnyOrder(except));
+    }
 }

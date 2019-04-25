@@ -12,6 +12,7 @@ public class ArrayDuplicate {
                 if (array[j].equals(current)) {
                     array[j] = array[array.length - count - 1];
                     count++;
+                    j--;
                 }
             }
         }
