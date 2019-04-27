@@ -70,48 +70,18 @@ public class Logic {
         int[][] table = this.convert();
         boolean result = false;
         for (int i = 0; i < table.length; i++) {
+            int count1 = 0;
+            int count2 = 0;
             for (int j = 0; j < table.length; j++) {
                 if (table[i][j] == 1) {
-                    result = checkLine(i, j, table);
+                    count1++;
+                }
+                if (table[j][i] == 1) {
+                    count2++;
                 }
             }
-        }
-        return result;
-    }
-
-    public boolean checkLine(int indexI, int indexJ, int[][] table) {
-        boolean result = false;
-        int count1 = 0;
-        int count2 = 0;
-        for (int i = 0; i < table.length; i++) {
-            if (table[indexI][i] == 1) {
-                count1++;
-            }
-            if (table[i][indexJ] == 1) {
-                count2++;
-            }
-        }
-        if (count1 ==  table.length || count2 == table.length) {
-            result = true;
-        }
-        return result;
-    }
-
-    public boolean checkLine2(int indexI, int indexJ, int[][] table) {
-        boolean result = true;
-        for (int i = 0; i < table.length; i++) {
-            if (table[indexI][i] != 1) {
-                result = false;
-                break;
-            }
-        }
-        if (result) {
-            return result;
-        }
-        result = true;
-        for (int i = 0; i < table.length; i++) {
-            if (table[i][indexJ] != 1) {
-                result = false;
+            if (count1 ==  table.length || count2 == table.length) {
+                result = true;
                 break;
             }
         }
