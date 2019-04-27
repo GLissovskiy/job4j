@@ -80,6 +80,24 @@ public class Logic {
     }
 
     public boolean checkLine(int indexI, int indexJ, int[][] table) {
+        boolean result = false;
+        int count1 = 0;
+        int count2 = 0;
+        for (int i = 0; i < table.length; i++) {
+            if (table[indexI][i] == 1) {
+                count1++;
+            }
+            if (table[i][indexJ] == 1) {
+                count2++;
+            }
+        }
+        if (count1 ==  table.length || count2 == table.length) {
+            result = true;
+        }
+        return result;
+    }
+
+    public boolean checkLine2(int indexI, int indexJ, int[][] table) {
         boolean result = true;
         for (int i = 0; i < table.length; i++) {
             if (table[indexI][i] != 1) {
