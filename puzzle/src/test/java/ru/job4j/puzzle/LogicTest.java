@@ -6,7 +6,7 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 public class LogicTest {
-    /*@Test
+    @Test
     public void whenVerticalWin() {
         Logic logic = new Logic(5) {
             @Override
@@ -55,5 +55,5 @@ public class LogicTest {
             }
         };
         assertThat(logic.isWin(), is(false));
-    }*/
+    }
 }
