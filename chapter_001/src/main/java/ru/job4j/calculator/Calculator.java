@@ -5,6 +5,13 @@ public class Calculator {
         return first + second;
     }
 
+    public double add(double first, double second, double third) {
+        return add(
+                first,
+                add(second, third)
+        );
+    }
+
     public double substract(double first, double second) {
         return first - second;
     }
