@@ -1,5 +1,6 @@
 package ru.job4j.tracker;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -51,6 +52,7 @@ public class Tracker {
      */
     public boolean replace(String id, Item item) {
         boolean flag = false;
+        item.setId(id);
         for (int i = 0; i < this.position; i++) {
             if (this.items[i].getId().equals(id)) {
                 this.items[i] = item;
@@ -67,21 +69,16 @@ public class Tracker {
      */
     public boolean delete(String id) {
         boolean flag = false;
-        Item[] temp = new Item[this.position];
-        int start = 0;
+        int start;
         for (int i = 0; i < this.position; i++) {
             if (this.items[i].getId().equals(id)) {
-                this.position--;
                 start = i;
+                System.arraycopy(this.items, start + 1, this.items, start, this.position - start - 1);
+                this.items[this.position--] = null;
                 flag = true;
                 break;
-            } else {
-                temp[i] = this.items[i];
             }
         }
-        System.arraycopy(this.items, start + 1, temp, start, this.position - start);
-        this.items[this.position] = null;
-        System.arraycopy(temp, 0, this.items, 0, this.position);
         return flag;
     }
 
@@ -90,9 +87,7 @@ public class Tracker {
      * @return arraycopy of elements.
      */
     public Item[] findAll() {
-        Item[] found = new Item[this.position];
-        System.arraycopy(this.items, 0, found, 0, this.position);
-        return found;
+        return Arrays.copyOf(this.items, this.position);
     }
 
     /**
@@ -103,12 +98,16 @@ public class Tracker {
     public Item[] findByName(String key) {
         Item[] result = new Item[this.position];
         int count = 0;
-        for (int i = 0; i < this.position; i++) {
-            if (this.items[i].getName().equals(key)) {
-                result[count++] = this.items[i];
+        for (Item item : this.items) {
+            if (item == null) {
+                break;
+            }
+            if (item.getName().equals(key)) {
+                result[count] = item;
+                count++;
             }
         }
-        return result;
+        return Arrays.copyOf(result, count);
     }
 
     /**
