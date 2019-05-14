@@ -63,7 +63,7 @@ public class Tracker {
 
     /**
      * Delete item by id.
-     * @param id input id of  item.
+     * @param id input id of item.
      */
     public boolean delete(String id) {
         boolean flag = false;
