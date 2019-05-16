@@ -93,7 +93,7 @@ public class Tracker {
     /**
      * Search item by name.
      * @param key search word.
-     * @return list of elements with  searched name.
+     * @return list of  elements with searched name.
      */
     public Item[] findByName(String key) {
         Item[] result = new Item[this.position];
