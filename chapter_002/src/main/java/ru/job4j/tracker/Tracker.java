@@ -91,7 +91,7 @@ public class Tracker {
     }
 
     /**
-     * Search item by name.
+     * Search item by  name.
      * @param key search word.
      * @return list of  elements with searched name.
      */
