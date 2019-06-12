@@ -69,7 +69,7 @@ public class StartUI {
         boolean exit = false;
         while (!exit) {
             this.showMenu();
-            String answer = this.input.ask("Введите пункт меню : ");
+            String answer = this.input.ask("Choose your destiny : ");
             if (ADD.equals(answer)) {
                 this.createItem();
             } else if (SHOW.equals(answer)) {
