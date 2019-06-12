@@ -14,6 +14,17 @@ public class Item {
         this.time = time;
     }
 
+    public  Item(String name, String decs) {
+        this.name = name;
+        this.decs = decs;
+    }
+
+    public  Item(String id, String name, String decs) {
+        this.id = id;
+        this.name = name;
+        this.decs = decs;
+    }
+
     public String getId() {
         return id;
     }
